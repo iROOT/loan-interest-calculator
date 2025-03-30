@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор процентной ставки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>Калькулятор эквивалентной процентной ставки</h1>
+
+        <div class="input-group">
+            <label for="loanAmount">Сумма займа:</label>
+            <input type="text" id="loanAmount" placeholder="Введите сумму займа"
+                pattern="[0-9 ]*" inputmode="numeric" autocomplete="off"
+                aria-label="Сумма займа в рублях">
+        </div>
+
+        <div class="input-group">
+            <label for="monthlyPayment">Ежемесячный платеж:</label>
+            <input type="text" id="monthlyPayment" placeholder="Введите ежемесячный платеж"
+                pattern="[0-9 ]*" inputmode="numeric" autocomplete="off"
+                aria-label="Ежемесячный платеж в рублях">
+        </div>
+
+        <div class="input-group">
+            <label>Срок займа:</label>
+            <div class="term-options">
+                <div class="term-option">
+                    <input type="radio" id="termYears" name="termUnit" value="years" checked>
+                    <label for="termYears">В годах</label>
+                </div>
+                <div class="term-option">
+                    <input type="radio" id="termMonths" name="termUnit" value="months">
+                    <label for="termMonths">В месяцах</label>
+                </div>
+            </div>
+            <input type="number" id="loanTerm" placeholder="Введите срок займа"
+                min="1" step="1" inputmode="numeric" autocomplete="off"
+                aria-label="Срок займа">
+        </div>
+
+        <button id="calculateBtn">Рассчитать</button>
+
+        <div id="result" class="result-container hidden">
+            </div>
+
+        <div id="error" class="error-container hidden">
+            </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
